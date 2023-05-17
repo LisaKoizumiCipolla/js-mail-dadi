@@ -26,17 +26,19 @@ console.log(resultMessage);
 const userEmail = (prompt("Insert your email"));
 
 //List of authorised accounts
-const authorisedEmail = ["Eru@Iluvatar.lotr" , "Azathoth@ancientone.hpl" , "Tenochtitlan@texcoco.aztec" , "GreatATuin@discworld.tp" , "OhNoNotAgain@petunia.da"];
+let authorisedEmail = ["Eru@Iluvatar.lotr" , "Azathoth@ancientone.hpl" , "Tenochtitlan@texcoco.aztec" , "GreatATuin@discworld.tp" , "OhNoNotAgain@petunia.da"];
 
 //Message variable
 let accessMessage;
 
 //Calculations
-if (userEmail) {
-    accessMessage = ("Access GRANTED");
-} else {
-    accessMessage = ("Access DENIED");
-}
+for (let i = 0 ; i < authorisedEmail.length ; i++){ 
 
-//Result on console
-console.log(accessMessage);
+    if (userEmail === authorisedEmail[i]) {
+        accessMessage = ("Access GRANTED");
+    } else if (userEmail !== authorisedEmail[i]) {
+        accessMessage = ("Access DENIED");
+    }
+    
+    console.log(accessMessage);
+}

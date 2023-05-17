@@ -29,16 +29,21 @@ const userEmail = (prompt("Insert your email"));
 let authorisedEmail = ["Eru@Iluvatar.lotr" , "Azathoth@ancientone.hpl" , "Tenochtitlan@texcoco.aztec" , "GreatATuin@discworld.tp" , "OhNoNotAgain@petunia.da"];
 
 //Message variable
-let accessMessage;
+let access;
+
+access = false;
 
 //Calculations
 for (let i = 0 ; i < authorisedEmail.length ; i++){ 
 
     if (userEmail === authorisedEmail[i]) {
-        accessMessage = ("Access GRANTED");
-    } else if (userEmail !== authorisedEmail[i]) {
-        accessMessage = ("Access DENIED");
-    }
-    
-    console.log(accessMessage);
+        access = true;
+    } 
+
+}
+
+if (access){
+    console.log("Access Granted");
+} else {
+    console.log("Access Denied")
 }
